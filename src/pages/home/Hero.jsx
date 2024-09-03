@@ -18,7 +18,7 @@ const Hero = () => {
       .catch((err) => setError(err.message));
   }, []);
 
-  if (error) return <Error info={err.message} />;
+  if (error) return <Error info={error} />;
   if (!movie) return <Loader />;
 
   console.log(movie);
