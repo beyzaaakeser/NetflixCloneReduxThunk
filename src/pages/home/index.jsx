@@ -3,10 +3,10 @@ import Hero from './Hero';
 import { useSelector } from 'react-redux';
 import Loader from '../../components/loader';
 import Error from '../../components/error';
+import MovieList from './MovieList';
 
 const Home = () => {
   const { isLoading, error, genres } = useSelector((store) => store.genres);
-  console.log(genres);
   return (
     <div>
       <Hero />
@@ -15,7 +15,7 @@ const Home = () => {
       ) : error ? (
         <Error info={error} />
       ) : (
-        genres.map((genre) => <div key={genre.id}>{genre.name}</div>)
+        genres && genres.map((genre) => <MovieList key={genre.id} genre={genre}/>)
       )}
     </div>
   );
