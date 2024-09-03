@@ -5,11 +5,12 @@ import Header from './components/header';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getGenres } from './redux/actions';
+import Detail from './pages/detail';
 
 const App = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getGenres())
+    dispatch(getGenres());
   }, []);
 
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/movie/:id" element={<Detail />} />
           <Route path="/favourites" element={<Favourites />} />
         </Routes>
       </div>

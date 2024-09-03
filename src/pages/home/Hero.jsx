@@ -43,9 +43,9 @@ const Hero = () => {
         </div>
       </div>
 
-      <div>
+      <div className="" >
         <img
-          className="drop-shadow-[0_0_80px_rgba(255,255,255,0.4)] my-4 object-contain rounded max-h-[300px]"
+          className=" rounded drop-shadow-[0_0_80px_rgba(255,255,255,0.4)] m-auto my-4 object-contain  max-h-[300px]"
           src={imageURL + movie.backdrop_path}
           alt=""
         />
