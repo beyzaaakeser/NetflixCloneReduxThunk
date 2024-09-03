@@ -21,7 +21,6 @@ const Hero = () => {
   if (error) return <Error info={error} />;
   if (!movie) return <Loader />;
 
-  console.log(movie);
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 lg:max-h-[400px] gap-5 mb-10  ">
       <div className="flex flex-col gap-6 items-center justify-center">
@@ -38,12 +37,18 @@ const Hero = () => {
           <button className="p-2 bg-red-600 rounded transition hover:bg-red-700">
             Watch Online
           </button>
-          <button className="p-2 bg-blue-600 rounded transition hover:bg-blue-700">Add To List</button>
+          <button className="p-2 bg-blue-600 rounded transition hover:bg-blue-700">
+            Add To List
+          </button>
         </div>
       </div>
 
       <div>
-        <img className='drop-shadow-[0_0_80px_rgba(255,255,255,0.4)] my-4 object-contain rounded max-h-[300px]' src={imageURL + movie.backdrop_path} alt="" />
+        <img
+          className="drop-shadow-[0_0_80px_rgba(255,255,255,0.4)] my-4 object-contain rounded max-h-[300px]"
+          src={imageURL + movie.backdrop_path}
+          alt=""
+        />
       </div>
     </div>
   );
