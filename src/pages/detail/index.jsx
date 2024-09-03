@@ -4,6 +4,7 @@ import api from '../../utils/api';
 import Error from '../../components/error';
 import Loader from '../../components/loader';
 import Banner from './Banner';
+import Content from './Content';
 
 const Detail = () => {
   const { id } = useParams();
@@ -23,13 +24,13 @@ const Detail = () => {
   console.log(movie);
 
   if (error) return <Error info={error.message} />;
-  if (!movie) return <Loader/>
+  if (!movie) return <Loader />;
 
   return (
     <div>
       <div>
-       <Banner movie={movie}/>
-
+        <Banner movie={movie} />
+        <Content movie={movie} />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { imageURL } from '../../utils/constants';
 
 const Banner = ({ movie }) => {
   return (
-    <div className="h-[25vh] drop-shadow-[0_0_80px_rgba(255,255,255,0.1)] relative">
+    <div className="h-[25vh] lg:h-[35vh] drop-shadow-[0_0_80px_rgba(255,255,255,0.1)] relative">
       <img
         className="size-full object-cover rounded-sm "
         src={imageURL + movie.backdrop_path}
