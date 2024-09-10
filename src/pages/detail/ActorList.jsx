@@ -5,7 +5,7 @@ import { imageURL } from '../../utils/constants';
 const ActorList = ({ actors }) => {
   return (
     <div>
-      <h2 className="font-semibold text-lg md:text-xl">Actors and Actresses</h2>
+      <h2 className="font-semibold text-lg md:text-xl my-5">Actors and Actresses</h2>
       <Splide options={{ autoWidth: true, gap: '10px', pagination: false }}>
         {actors.map((actor, index) => (
           <SplideSlide key={index}>

@@ -2,7 +2,7 @@ import React from 'react';
 import DetailInfo from './DetailInfo';
 
 const Content = ({ movie }) => {
-  console.log(movie);
+  
   return (
     <div className="my-10 grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10">
       <div>

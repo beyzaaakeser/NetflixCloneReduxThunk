@@ -6,6 +6,7 @@ import Loader from '../../components/loader';
 import Banner from './Banner';
 import Content from './Content';
 import ActorList from './ActorList';
+import VideoList from './VideoList';
 
 const Detail = () => {
   const { id } = useParams();
@@ -22,7 +23,6 @@ const Detail = () => {
       .catch((err) => setError(err));
   }, []);
 
-  console.log(movie);
 
   if (error) return <Error info={error.message} />;
   if (!movie) return <Loader />;
@@ -33,6 +33,7 @@ const Detail = () => {
         <Banner movie={movie} />
         <Content movie={movie} />
         <ActorList actors={movie.credits.cast}/>
+        <VideoList videos= {movie.videos.results}/>
       </div>
     </div>
   );
