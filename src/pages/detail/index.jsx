@@ -5,6 +5,7 @@ import Error from '../../components/error';
 import Loader from '../../components/loader';
 import Banner from './Banner';
 import Content from './Content';
+import ActorList from './ActorList';
 
 const Detail = () => {
   const { id } = useParams();
@@ -31,6 +32,7 @@ const Detail = () => {
       <div>
         <Banner movie={movie} />
         <Content movie={movie} />
+        <ActorList actors={movie.credits.cast}/>
       </div>
     </div>
   );
