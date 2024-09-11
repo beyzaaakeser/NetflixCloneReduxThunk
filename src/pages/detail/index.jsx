@@ -31,7 +31,7 @@ const Detail = () => {
   return (
     <div>
       <div>
-        <Button/>
+        <Button movie={movie}/>
         <Banner movie={movie} />
         <Content movie={movie} />
         <ActorList actors={movie.credits.cast}/>
