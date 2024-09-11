@@ -3,6 +3,8 @@ import api from '../../utils/api';
 import Error from '../../components/error';
 import Loader from '../../components/loader';
 import { imageURL } from '../../utils/constants';
+import Button from '../detail/Button';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [movie, setMovies] = useState(null);
@@ -34,16 +36,17 @@ const Hero = () => {
         </p>
 
         <div className="flex gap-5">
-          <button className="p-2 bg-red-600 rounded transition hover:bg-red-700">
+          <Link
+            to={`/movie/${movie.id}`}
+            className="p-2 bg-red-600 rounded transition hover:bg-red-700"
+          >
             Watch Online
-          </button>
-          <button className="p-2 bg-blue-600 rounded transition hover:bg-blue-700">
-            Add To List
-          </button>
+          </Link>
+          <Button movie={movie} />
         </div>
       </div>
 
-      <div className="" >
+      <div className="">
         <img
           className=" rounded drop-shadow-[0_0_80px_rgba(255,255,255,0.4)] m-auto my-4 object-contain  max-h-[300px]"
           src={imageURL + movie.backdrop_path}
