@@ -2,7 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { RiArrowLeftSLine } from 'react-icons/ri';
 import { MdOutlineChecklist } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
+import { addToFavourite } from '../../redux/actions';
 const Button = () => {
+  const dispatch = useDispatch();
+  const hanleClick = () => { 
+    dispatch(addToFavourite())
+   }
   return (
     <div className="mb-5 flex justify-between">
       <Link
@@ -12,7 +18,7 @@ const Button = () => {
         <RiArrowLeftSLine className="font-semibold text-xl" />
         Undo
       </Link>
-      <button className="bg-blue-600 py-2 px-4 rounded hover:bg-blue-500 transition  flex justify-center items-center gap-2">
+      <button onClick={hanleClick} className="bg-blue-600 py-2 px-4 rounded hover:bg-blue-500 transition  flex justify-center items-center gap-2">
         <MdOutlineChecklist className="font-semibold text-xl" /> Add To Watch
         List
       </button>
