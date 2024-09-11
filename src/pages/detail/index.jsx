@@ -7,6 +7,7 @@ import Banner from './Banner';
 import Content from './Content';
 import ActorList from './ActorList';
 import VideoList from './VideoList';
+import Button from './Button';
 
 const Detail = () => {
   const { id } = useParams();
@@ -30,6 +31,7 @@ const Detail = () => {
   return (
     <div>
       <div>
+        <Button/>
         <Banner movie={movie} />
         <Content movie={movie} />
         <ActorList actors={movie.credits.cast}/>
