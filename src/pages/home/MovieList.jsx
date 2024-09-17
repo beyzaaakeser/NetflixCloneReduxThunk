@@ -4,6 +4,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { imageURL } from '../../utils/constants';
 import { Link } from 'react-router-dom';
+import RatingCircle from '../../components/rating';
 const MovieList = ({ genre }) => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
@@ -34,13 +35,20 @@ const MovieList = ({ genre }) => {
       >
         {movies?.map((movie, key) => (
           <SplideSlide key={key}>
-            <Link to={`/movie/${movie.id}`}>
-              <img
-                className="max-w-[300px] h-full cursor-pointer rounded transition hover:scale-[1.01]"
-                src={imageURL + movie.poster_path}
-                alt={movie.title}
-              />
-            </Link>
+            <div className="relative h-full">
+              <Link to={`/movie/${movie.id}`}>
+                <img
+                  className="max-w-[300px] h-full cursor-pointer rounded transition hover:scale-[1.01]"
+                  src={imageURL + movie.poster_path}
+                  alt={movie.title}
+                />
+              </Link>
+              {movie.vote_average > 0 && (
+                <div className="absolute bottom-2 right-2">
+                  <RatingCircle rating={movie.vote_average.toFixed(1)} />
+                </div>
+              )}
+            </div>
           </SplideSlide>
         ))}
       </Splide>

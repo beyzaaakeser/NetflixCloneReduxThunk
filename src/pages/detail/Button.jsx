@@ -10,7 +10,7 @@ const Button = ({ movie }) => {
     dispatch(toggleFavourite(movie, !isFav));
   };
 
-  console.log(isFav);
+ 
   return (
 
       <button

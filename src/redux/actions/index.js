@@ -23,8 +23,8 @@ export const getFavorites = () => (dispatch) => {
   dispatch({ type: ActionTypes.FAV_LOADING });
   api
     .get('/account/21283936/favorite/movies')
-    .then((res) =>
-      dispatch({ type: ActionTypes.FAV_SUCCESS, payload: res.data.results })
+    .then((res) => 
+     dispatch({ type: ActionTypes.FAV_SUCCESS, payload: res.data.results }) 
     )
     .catch((err) =>
       dispatch({ type: ActionTypes.FAV_ERROR, payload: err.message })

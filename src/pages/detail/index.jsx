@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { RiArrowLeftSLine } from 'react-icons/ri';
 import api from '../../utils/api';
@@ -15,6 +15,8 @@ const Detail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const params = {
@@ -34,7 +36,7 @@ const Detail = () => {
       <div>
         <div className="mb-5 flex justify-between">
           <Link
-            to={'..'}
+            onClick={()=> navigate(-1)}
             className="bg-gray-600 py-2 px-4 rounded hover:bg-gray-500 transition flex justify-center items-center"
           >
             <RiArrowLeftSLine className="font-semibold text-xl" />
